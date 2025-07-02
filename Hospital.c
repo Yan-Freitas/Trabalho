@@ -18,7 +18,12 @@ typedef struct medico
     int crm;
     bool plantao;
 }MEDICO;
-
+void gestaopac(struct PACIENTE[]){
+    printf("Você escolheu gestão de pacientes! Escolha o que deseja fazer\n\n 1 -- CADASTRAR PACIENTE\n 2 -- CONSULTAR ID\n 3 -- ATUALIZAR PACIENTE\n 4 -- EXCLUIR PACIENTE");
+}
+void gestaomed(struct MEDICO[]){
+    printf("Você escolheu gestão de médicos! Escolha o que deseja fazer\n\n 1 -- CADASTRAR MÉDICO\n 2 -- CONSULTAR ID\n 3 -- ATUALIZAR MÉDICO\n 4 -- EXCLUIR MÉDICO");
+}
 int main()
 {
     setlocale(LC_ALL,"");
