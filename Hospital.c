@@ -7,7 +7,6 @@ typedef struct paciente
     int id;
     char nome[30];
     int cpf;
-    int culejo;
     int idade;
     int idmed;
     int estado;
