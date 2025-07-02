@@ -19,10 +19,28 @@ typedef struct medico
     bool plantao;
 }MEDICO;
 void gestaopac(struct PACIENTE[]){
+    int num;
     printf("Você escolheu gestão de pacientes! Escolha o que deseja fazer\n\n 1 -- CADASTRAR PACIENTE\n 2 -- CONSULTAR ID\n 3 -- ATUALIZAR PACIENTE\n 4 -- EXCLUIR PACIENTE");
+    switch (num)
+    {
+    case 1:
+        break;
+    
+    default:
+        break;
+    }
 }
 void gestaomed(struct MEDICO[]){
+    int num;
     printf("Você escolheu gestão de médicos! Escolha o que deseja fazer\n\n 1 -- CADASTRAR MÉDICO\n 2 -- CONSULTAR ID\n 3 -- ATUALIZAR MÉDICO\n 4 -- EXCLUIR MÉDICO");
+    switch (num)
+    {
+    case 1:
+        break;
+    
+    default:
+        break;
+    }
 }
 int main()
 {
