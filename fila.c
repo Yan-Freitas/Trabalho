@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#include <windows.h>
+#include <stdbool.h>
+
 typedef struct paciente
 {
     int id;
@@ -14,5 +15,10 @@ typedef struct paciente
 }PACIENTE;
 void main()
 {
-    return 0;
+    PACIENTE paciente[1000];
+    FILE *fptr;
+    bool buf = true;
+    while(buf==true){
+        
+    }
 }
