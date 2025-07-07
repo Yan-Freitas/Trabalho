@@ -2,26 +2,37 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-void main ()
+int medcount ()
 {
-   char num[20];
-   char med[50]="C:\\Users\\Public\\Documents\\Trabalho\\Medicos\\medico";
+   char num[500];
+   int nume = 0;
+   FILE *fptr;
+   fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Medicos\\medico","r");
+   while(fgets(num,500,fptr)){
+    nume++;
+   }
+   fclose(fptr);
+   return nume;
+}
+void main ()    
+{
+   int nummed = medcount();
    int id;
    int idade;
    int idmed;
    int estado;
+   printf("%d",nummed);
    FILE *fptr;
+   fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Medicos\\medico","a");
    for (int i = 1; i <= 10; ++i )
    {
+      nummed+=i;
       id = rand()%8999+1000;
       idade = rand()%99+1;
-      idmed = rand()%8999+1;
+      idmed = rand()%8999+1000;
       estado = rand()%3+1;
-      itoa(i,  num, 10);
-      strcat(med,num);
-      fptr = fopen(("%s",med),"w");
-      fprintf(fptr,"ID:%d,NOME:Jose,IDADE:%d,IDMED:%d,ESTADO:%d",id,idade,idmed,estado);
-      fclose(fptr);
-      med[49]=0;
+      fprintf(fptr,"MEDICO%d: ID:%d,NOME:Jose,IDADE:%d,IDMED:%d,ESTADO:%d\n",nummed,id,idade,idmed,estado);
+      nummed-=i;
    }
+   fclose(fptr);
 }

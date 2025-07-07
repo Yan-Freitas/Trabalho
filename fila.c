@@ -17,8 +17,9 @@ void main()
 {
     PACIENTE paciente[1000];
     FILE *fptr;
-    bool buf = true;
-    while(buf==true){
-        
+    bool hold = true;
+    int buffer = 0;
+    while(hold==true){
+
     }
 }
