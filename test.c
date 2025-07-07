@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <time.h>
-int main ( void )
+void main ()
 {
    srand(time(NULL));
    char num[20];
@@ -26,5 +26,4 @@ int main ( void )
       fclose(fptr);
       med[49]=0;
    }
-   return 0;
 }
