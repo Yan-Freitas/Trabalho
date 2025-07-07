@@ -17,22 +17,21 @@ int medcount ()
 void main ()    
 {
    int nummed = medcount();
-   int id;
+   int id = 1000;
    int idade;
-   int idmed;
+   int idmed = 1000;
    int estado;
    printf("%d",nummed);
    FILE *fptr;
    fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Medicos\\medico","a");
    for (int i = 1; i <= 10; ++i )
    {
-      nummed+=i;
-      id = rand()%8999+1000;
+      nummed++;
       idade = rand()%99+1;
-      idmed = rand()%8999+1000;
       estado = rand()%3+1;
       fprintf(fptr,"MEDICO%d: ID:%d,NOME:Jose,IDADE:%d,IDMED:%d,ESTADO:%d\n",nummed,id,idade,idmed,estado);
-      nummed-=i;
+      idmed++;
+      id++;
    }
    fclose(fptr);
 }
