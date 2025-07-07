@@ -2,10 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#include <time.h>
 void main ()
 {
-   srand(time(NULL));
    char num[20];
    char med[50]="C:\\Users\\Public\\Documents\\Trabalho\\Medicos\\medico";
    int id;
