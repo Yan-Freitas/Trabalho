@@ -17,9 +17,9 @@ int medcount ()
 void main ()    
 {
    int nummed = medcount();
-   int id = 1000;
+   int id = 1000+nummed;
    int idade;
-   int idmed = 1000;
+   int idmed = 1000+nummed;
    int estado;
    printf("%d",nummed);
    FILE *fptr;
