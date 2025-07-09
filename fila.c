@@ -34,9 +34,11 @@ void main()
         fgets(str,100,fptr);
         int strle = strlen(str)-2;
         if(str[strle]=='3'){
-            printf("%s",str);
+            printf("INTERNACAO IMEDIATA! --> %s",str);
         }
     }
+    fclose(fptr);
+    fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Medicos\\medico","r");
     for(int i=0;i<nummed;i++){
         fgets(str,100,fptr);
         int strle = strlen(str)-2;
@@ -44,6 +46,8 @@ void main()
             printf("%s",str);
         }
     }
+    fclose(fptr);
+    fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Medicos\\medico","r");
     for(int i=0;i<nummed;i++){
         fgets(str,100,fptr);
         int strle = strlen(str)-2;
