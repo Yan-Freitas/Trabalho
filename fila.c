@@ -3,23 +3,53 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdbool.h>
-
-typedef struct paciente
+typedef struct medico
 {
     int id;
     char nome[30];
-    int cpf;
     int idade;
     int idmed;
     int estado;
-}PACIENTE;
+}MEDICO;
+int medcount ()
+{
+   char num[500];
+   int nume = 0;
+   FILE *fptr;
+   fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Medicos\\medico","r");
+   while(fgets(num,500,fptr)){
+    nume++;
+   }
+   fclose(fptr);
+   return nume;
+}
 void main()
 {
-    PACIENTE paciente[1000];
+    char str[100];
+    MEDICO medico[1000];
+    int nummed = medcount();
     FILE *fptr;
-    bool hold = true;
-    int buffer = 0;
-    while(hold==true){
-
+    fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Medicos\\medico","r");
+    for(int i=0;i<nummed;i++){
+        fgets(str,100,fptr);
+        int strle = strlen(str)-2;
+        if(str[strle]=='3'){
+            printf("%s",str);
+        }
     }
+    for(int i=0;i<nummed;i++){
+        fgets(str,100,fptr);
+        int strle = strlen(str)-2;
+        if(str[strle]=='2'){
+            printf("%s",str);
+        }
+    }
+    for(int i=0;i<nummed;i++){
+        fgets(str,100,fptr);
+        int strle = strlen(str)-2;
+        if(str[strle]=='1'){
+            printf("%s",str);
+        }
+    }
+    fclose(fptr);
 }
