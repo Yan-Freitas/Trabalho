@@ -3,20 +3,20 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdbool.h>
-typedef struct medico
+typedef struct paciente
 {
     int id;
     char nome[30];
     int idade;
     int idmed;
     int estado;
-}MEDICO;
+}paciente;
 int medcount ()
 {
    char num[500];
    int nume = 0;
    FILE *fptr;
-   fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Medicos\\medico","r");
+   fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Pacientes\\paciente","r");
    while(fgets(num,500,fptr)){
     nume++;
    }
@@ -26,19 +26,19 @@ int medcount ()
 void main()
 {
     char str[100];
-    MEDICO medico[1000];
+    paciente paciente[1000];
     int nummed = medcount();
     FILE *fptr;
-    fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Medicos\\medico","r");
+    fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Pacientes\\paciente","r");
     for(int i=0;i<nummed;i++){
         fgets(str,100,fptr);
         int strle = strlen(str)-2;
         if(str[strle]=='3'){
-            printf("INTERNACAO IMEDIATA! --> %s",str);
+            printf("\033[31mINTERNACAO IMEDIATA! -->\033[0m %s",str);
         }
     }
     fclose(fptr);
-    fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Medicos\\medico","r");
+    fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Pacientes\\paciente","r");
     for(int i=0;i<nummed;i++){
         fgets(str,100,fptr);
         int strle = strlen(str)-2;
@@ -47,7 +47,7 @@ void main()
         }
     }
     fclose(fptr);
-    fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Medicos\\medico","r");
+    fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Pacientes\\paciente","r");
     for(int i=0;i<nummed;i++){
         fgets(str,100,fptr);
         int strle = strlen(str)-2;
