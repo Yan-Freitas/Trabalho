@@ -3,57 +3,58 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdbool.h>
-typedef struct paciente
-{
-    int id;
-    char nome[30];
-    int idade;
-    int idmed;
-    int estado;
-}paciente;
 int medcount ()
 {
    char num[500];
-   int nume = 0;
+   int nummed = 0;
    FILE *fptr;
    fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Pacientes\\paciente","r");
    while(fgets(num,500,fptr)){
-    nume++;
+    nummed++;
    }
    fclose(fptr);
-   return nume;
+   return nummed;
 }
 void main()
 {
     char str[100];
-    paciente paciente[1000];
     int nummed = medcount();
     FILE *fptr;
+    FILE *forg;
     fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Pacientes\\paciente","r");
+    forg = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Pacientes\\pacienteorganizado","w");
     for(int i=0;i<nummed;i++){
         fgets(str,100,fptr);
         int strle = strlen(str)-2;
         if(str[strle]=='3'){
             printf("\033[31mINTERNACAO IMEDIATA! -->\033[0m %s",str);
+            fprintf(forg,"%s",str);
         }
     }
+    fclose(forg);
     fclose(fptr);
+    forg = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Pacientes\\pacienteorganizado","a");
     fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Pacientes\\paciente","r");
     for(int i=0;i<nummed;i++){
         fgets(str,100,fptr);
         int strle = strlen(str)-2;
         if(str[strle]=='2'){
             printf("%s",str);
+            fprintf(forg,"%s",str);
         }
     }
+    fclose(forg);
     fclose(fptr);
+    forg = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Pacientes\\pacienteorganizado","a");
     fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Pacientes\\paciente","r");
     for(int i=0;i<nummed;i++){
         fgets(str,100,fptr);
         int strle = strlen(str)-2;
         if(str[strle]=='1'){
             printf("%s",str);
+            fprintf(forg,"%s",str);
         }
     }
+    fclose(forg);
     fclose(fptr);
 }
