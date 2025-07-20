@@ -7,7 +7,7 @@ int medcount ()
    char num[500];
    int nume = 0;
    FILE *fptr;
-   fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Medicos\\medico","r");
+   fptr = fopen("medico","r");
    while(fgets(num,500,fptr)){
     nume++;
    }
@@ -21,7 +21,7 @@ void main ()
    int idade;
    printf("%d",nummed);
    FILE *fptr;
-   fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Medicos\\medico","a");
+   fptr = fopen("medico","a");
    for (int i = 1; i <= 10; ++i )
    {
       nummed++;

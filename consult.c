@@ -8,7 +8,7 @@
 void medconsul()
 {
     FILE *fptr;
-    fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Medicos\\medico","r");
+    fptr = fopen("medico","r");
     int num[10];
     char nome[500];
     while(fgets(nome,500,fptr)){

@@ -3,12 +3,13 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdbool.h>
+//Checar quantidade de medicos
 int medcount ()
 {
    char num[500];
    int nummed = 0;
    FILE *fptr;
-   fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Pacientes\\paciente","r");
+   fptr = fopen("paciente","r");
    while(fgets(num,500,fptr)){
     nummed++;
    }
@@ -21,20 +22,21 @@ void main()
     int nummed = medcount();
     FILE *fptr;
     FILE *forg;
-    fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Pacientes\\paciente","r");
-    forg = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Pacientes\\pacienteorganizado","w");
+    fptr = fopen("paciente","r");
+    //Forg vai ser usado pra criar um novo arquivo de texto com os pacientes organizados em ordem de estado
+    forg = fopen("pacienteorganizado","w");
     for(int i=0;i<nummed;i++){
         fgets(str,100,fptr);
         int strle = strlen(str)-2;
         if(str[strle]=='3'){
             printf("\033[31mINTERNACAO IMEDIATA! -->\033[0m %s",str);
-            fprintf(forg,"%s",str);
+            fprintf(forg,"INTERNAÇÃO IMEDIATA! %s",str);
         }
     }
     fclose(forg);
     fclose(fptr);
-    forg = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Pacientes\\pacienteorganizado","a");
-    fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Pacientes\\paciente","r");
+    forg = fopen("pacienteorganizado","a");
+    fptr = fopen("paciente","r");
     for(int i=0;i<nummed;i++){
         fgets(str,100,fptr);
         int strle = strlen(str)-2;
@@ -45,8 +47,8 @@ void main()
     }
     fclose(forg);
     fclose(fptr);
-    forg = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Pacientes\\pacienteorganizado","a");
-    fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Pacientes\\paciente","r");
+    forg = fopen("pacienteorganizado","a");
+    fptr = fopen("paciente","r");
     for(int i=0;i<nummed;i++){
         fgets(str,100,fptr);
         int strle = strlen(str)-2;

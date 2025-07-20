@@ -7,7 +7,7 @@ int paccount ()
    char num[500];
    int nume = 0;
    FILE *fptr;
-   fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Pacientes\\paciente","r");
+   fptr = fopen("paciente","r");
    while(fgets(num,500,fptr)){
     nume++;
    }
@@ -23,7 +23,7 @@ void main ()
    int estado;
    printf("%d",numpac);
    FILE *fptr;
-   fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Pacientes\\paciente","a");
+   fptr = fopen("paciente","a");
    for (int i = 1; i <= 10; ++i )
    {
       numpac++;

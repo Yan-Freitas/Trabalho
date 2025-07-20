@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdio.h>
 #include <stdbool.h>
 #include <ctype.h>
 int checknum(char med[]){
@@ -26,7 +25,7 @@ int checknum(char med[]){
 void main(){
     FILE *fptr;
     int num;
-    fptr = fopen("C:\\Users\\Public\\Documents\\Trabalho\\Medicos\\medico","r");
+    fptr = fopen("medico","r");
     char nome[500];
     fgets(nome,500,fptr);
     fclose(fptr);  
